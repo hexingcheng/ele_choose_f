@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+    <style>
+    	body{
+    		background-color: #fff;
+    		font-family: "Microsoft YaHei";
+    		font-size: 14px;
+    	}
+    	.head-panle{
+    		background-color: yellow;
+    	}
+    	.version{
+    		padding: 5px 0 5px 5px;
+    		color: #fff;
+    	}
+    	.term-tips{
+    		padding: 10px 0;
+    		text-align: center;
+    		color: #fff;
+    	}
+    	.number{
+    		text-align: center;
+    		font-size: 0;
+    		padding-bottom: 10px;
+    	}
+    	.number-item{
+    		font-size: 14px;
+    		width: 30px;
+    		height: 30px;
+    		line-height: 30px;
+    		text-align: center;
+    		background-color: #fff;
+    		border-radius: 50%;
+    		display: inline-block;
+    		margin-right: 2px;
+    		color: yellow;
+    	}
+    	.time-info{
+    		background-color: #000;
+    		padding: 10px 0 10px 10px;
+    		color: #fff;
+    	}
+    	.time,.lottery{ 
+    		display: inline-block;
+    		padding: 4px 8px;
+    		background-color: #fff;
+    		color: yellow;
+    		border-radius: 2px;
+    	}
+    	.main{
+    		font-size: 0px;
+    	}
+    	.funcs{
+    		box-sizing: border-box;
+    		background-color:#DDDDDD;
+    		height: 120px;
+    		width: 33%;
+    		font-size: 14px;
+    		display: inline-block;
+    		border-right: 1px solid #FFFFFF;
+    		text-align: center;
+    	}
+    	.icon{
+    		color: yellow;
+    		font-weight: bold;
+    		font-size: 40px;
+    		margin-top: 20px;
+    	}
+    	.func-title{
+    		padding: 8px 0;
+    		color: #000000;
+    	}
+    </style>
+</head>
+<body>
+	<div class="head-panle">
+		<div class="version">
+			<span>v1.0.0</span>
+		</div>
+		<div class="term-tips">
+			第<span class="term-value">23</span>期开奖结果：
+		</div>
+		<div class="number">
+			<a href="" class="number-item">1</a>
+			<a href="" class="number-item">2</a>
+			<a href="" class="number-item">10</a>
+			<a href="" class="number-item">11</a>
+			<a href="" class="number-item">9</a>
+		</div>
+		<div class="time-info">
+			距离第<span>77</span>开奖剩余：
+			<span class="time minites">02</span>
+			<span class="gap">:</span>
+			<span class="time second">52</span>
+			<span class="lottery">正在开奖</span>
+		</div>
+	</div>
+	<div class="main">
+		<div class="funcs statistical">
+			<span class="mui-icon mui-icon-navigate icon"></span>
+			<p class="func-title">统计资讯</p>
+		</div>
+		<div class="funcs history">
+			<span class="mui-icon mui-icon-info icon"></span>
+			<p class="func-title">历史开奖</p>
+		</div>
+	</div>
+	<script>
+		mui.plusReady(function(){
+			mui('main').on('tap','.statistical',function(){
+				mui.openWindow('pages/statistical.html','statistical')
+			})
+			mui('main').on('tap','.history',function(){
+				mui.openWindow('pages/history.html','history')
+			})
+		})
+	</script>
+</body>
+</html>

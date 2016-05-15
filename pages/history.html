@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="../js/mui.min.js"></script>
+    <link href="../css/mui.min.css" rel="stylesheet"/>
+    <script type="text/javascript" charset="UTF-8">
+      	mui.init();
+    </script>
+    <style>
+   body{
+    		background-color: #fff;
+    		font-family: "Microsoft YaHei";
+    		font-size: 14px;
+    	}
+    .header{
+    	background-color: yellow;
+    }
+    .header a,.header h1{
+    	color: #fff;
+    }
+    .mui-scroll-wrapper{
+    	top: 44px;
+    }
+    .item{
+    	font-size: 0px;
+    	border-bottom: 1px solid #d1d1d1;
+    }
+    .head{
+    	background-color: #DDDDDD;
+    }
+    .item-inner{
+    	font-size: 14px;
+    	display: inline-block;
+    	width: 33%;
+    	text-align: center;
+    	padding: 8px 0;
+    	background-color: #fff;
+    	color: #000;
+    }
+    .head .item-inner{
+    	background-color: #DDDDDD;
+    }
+    .tips-choose-time{
+    	padding: 16px 0;
+    	text-align: center;
+    	position: relative;
+    }
+    .choose-time{
+    	padding: 4px 8px;
+		position: absolute;
+		background-color: red;
+		border-radius: 2px;
+		top: 50%;
+		right: 10px;
+		margin-top: -12px;    	
+    }
+    .choose-time a{
+    	color: #fff;
+    }
+    </style>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav header">
+	    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	    <h1 class="mui-title">历史记录</h1>
+	</header>
+	<div class="mui-content">
+	    <div class="mui-scroll-wrapper">
+	    	<div class="mui-scroll">
+	    		<div class="content">
+	    			<div class="tips-choose-time">
+	    				<span>2016.6.12</span>历史开奖
+	    				<span class="choose-time"><a href="">选择日期</a></span>
+	    			</div>
+	    			<div class="item head">
+	    				<div class="term item-inner">期数</div>
+	    				<div class="time item-inner">时间</div>
+	    				<div class="nums item-inner">号码展示</div>
+	    			</div>
+	    			<div class="item">
+	    				<div class="term item-inner">01</div>
+	    				<div class="time item-inner">09:10</div>
+	    				<div class="nums item-inner">1 2 3 4 5</div>
+	    			</div>
+	    			<div class="item">
+	    				<div class="term item-inner">02</div>
+	    				<div class="time item-inner">09:10</div>
+	    				<div class="nums item-inner">1 2 3 4 5</div>
+	    			</div>
+	    			<div class="item">
+	    				<div class="term item-inner">03</div>
+	    				<div class="time item-inner">09:10</div>
+	    				<div class="nums item-inner">1 2 3 4 5</div>
+	    			</div>
+	    			<div class="item">
+	    				<div class="term item-inner">04</div>
+	    				<div class="time item-inner">09:10</div>
+	    				<div class="nums item-inner">1 2 3 4 5</div>
+	    			</div>
+	    			<div class="item">
+	    				<div class="term item-inner">05</div>
+	    				<div class="time item-inner">09:10</div>
+	    				<div class="nums item-inner">1 2 3 4 5</div>
+	    			</div>
+	    			<div class="item">
+	    				<div class="term item-inner">06</div>
+	    				<div class="time item-inner">09:10</div>
+	    				<div class="nums item-inner">1 2 3 4 5</div>
+	    			</div>
+	    			<div class="item">
+	    				<div class="term item-inner">07</div>
+	    				<div class="time item-inner">09:10</div>
+	    				<div class="nums item-inner">1 2 3 4 5</div>
+	    			</div>
+	    			<div class="item">
+	    				<div class="term item-inner">08</div>
+	    				<div class="time item-inner">09:10</div>
+	    				<div class="nums item-inner">1 2 3 4 5</div>
+	    			</div>
+	    			<div class="item">
+	    				<div class="term item-inner">09</div>
+	    				<div class="time item-inner">09:10</div>
+	    				<div class="nums item-inner">1 2 3 4 5</div>
+	    			</div>
+	    			<div class="item">
+	    				<div class="term item-inner">10</div>
+	    				<div class="time item-inner">09:10</div>
+	    				<div class="nums item-inner">1 2 3 4 5</div>
+	    			</div>
+	    			<div class="item">
+	    				<div class="term item-inner">11</div>
+	    				<div class="time item-inner">09:10</div>
+	    				<div class="nums item-inner">1 2 3 4 5</div>
+	    			</div>
+	    		</div>
+	    	</div>
+	    </div>
+	</div>
+	<script ></script>
+	<script>
+		mui.plusReady(function(){
+			mui('.mui-scroll-wrapper').scroll()
+		})
+	</script>
+</body>
+</html>
