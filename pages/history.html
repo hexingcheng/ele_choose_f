@@ -6,6 +6,10 @@
     <title></title>
     <script src="../js/mui.min.js"></script>
     <link href="../css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="../css/mui.picker.min.css"/>
+    <script type="text/javascript" charset="UTF-8">
+      	mui.init();
+    </script>
     <style>
    body{
     		background-color: #fff;
@@ -52,10 +56,8 @@
 		border-radius: 2px;
 		top: 50%;
 		right: 10px;
-		margin-top: -12px;    	
-    }
-    .choose-time a{
-    	color: #fff;
+		margin-top: -12px;    
+		color: #fff;	
     }
     </style>
 </head>
@@ -70,7 +72,7 @@
 	    		<div class="content">
 	    			<div class="tips-choose-time">
 	    				<span>2016.6.12</span>历史开奖
-	    				<span class="choose-time"><a href="">选择日期</a></span>
+	    				<span class="choose-time">选择日期</span>
 	    			</div>
 	    			<div class="item head">
 	    				<div class="term item-inner">期数</div>
@@ -136,10 +138,67 @@
 	    	</div>
 	    </div>
 	</div>
+	<script src="../js/mui.picker.min.js"></script>
 	<script>
-		mui.plusReady(function(){
-			mui('.mui-scroll-wrapper').scroll()
-		})
+		mui.plusReady(function() {
+				mui('.mui-scroll-wrapper').scroll();
+				var date = new Date();
+				var year = date.getFullYear();
+				var timevalue = date.getFullYear() + "-" + formatT(date.getMonth(),true) + "-" + formatT(date.getDate());
+				var options = {
+					"type": "date", 
+					"beginYear": 2010,
+					"endYear": year,
+					"value": timevalue
+				}
+				mui('.tips-choose-time').on('tap', '.choose-time', function() {
+					var picker = new mui.DtPicker(options);
+					picker.show(function(rs) {
+						compareTime(rs)					
+						picker.dispose();
+					})
+				})
+				function compareTime(rs){
+					var nowYear = date.getFullYear();
+					var nowMonth = date.getMonth()+1;
+					var nowday = date.getDate();
+					var time = rs.value.split('-');
+					if(parseInt(nowYear)<time[0]){
+						mui.alert('所选年份无开奖记录');
+						return false;
+					}
+					if(parseInt(nowMonth)<parseInt(reformatT(time[1],true))){
+						mui.alert('所选月份无开奖记录');
+						return false;
+					}
+					if(parseInt(nowday)<parseInt(reformatT(time[2]))){
+						mui.alert('所选日期无开奖记录');
+						return false;
+					}
+					return true;
+				}
+				function reformatT(m,ifm){
+					if(m[0]=='0'){
+						m = m.slice(1);
+					}
+					m = m-0;
+					if(ifm){
+						m--;
+						return ''+m;
+					}
+					return ''+m;
+				}
+				function formatT(m,ifm) {
+					m = m - 0;
+					if(ifm){
+						m++;
+					}
+					if (m < 10) {
+						return "0" + m;
+					}
+					return "" + m;
+				}
+			})
 	</script>
 </body>
 </html>

@@ -1,146 +1,200 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-    <title></title>
-    <script src="../js/mui.min.js"></script>
-    <link href="../css/mui.min.css" rel="stylesheet"/>
-    <style>
-   body{ 
-    		background-color: #fff;
-    		font-family: "Microsoft YaHei";
-    		font-size: 14px;
-    	}
-    .header{
-    	background-color: #6687F9;
-    }
-    .header a,.header h1{
-    	color: #fff;
-    }
-    .mui-scroll-wrapper{
-    	top: 44px;
-    }
-    .item{
-    	font-size: 0px;
-    	border-bottom: 1px solid #D1D1D1;
-    	overflow: hidden;
-    }
-    .item-inner{
-    	font-size: 14px;
-    	/*display: inline-block;*/
-    	float: left;
-    	width: 50%;
-    	text-align: center;
-    	padding: 8px 0;
-    	background-color: #fff;
-    	color: #000;
-    }
-    .head .item-inner{
-    	background-color: #DDDDDD;
-    }
-    .tips-choose-time{
-    	padding: 16px 0;
-    	text-align: center;
-    	position: relative;
-    }
-    .choose-time{
-    	padding: 4px 8px;
-		position: absolute;
-		background-color: red;
-		border-radius: 2px;
-		top: 50%;
-		right: 10px;
-		margin-top: -12px;    	
-    }
-    .choose-time a{
-    	color: #fff;
-    }
-    </style>
-</head>
-<body>
-	<header class="mui-bar mui-bar-nav header">
-	    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-	    <h1 class="mui-title">统计</h1>
-	</header>
-	<div class="mui-content">
-	    <div class="mui-scroll-wrapper">
-	    	<div class="mui-scroll">
-	    		<div class="content">
-	    			<div class="tips-choose-time">
-	    				<span>2016.6.12</span>号码统计
-	    				<span class="choose-time"><a href="">选择日期</a></span>
-	    			</div>
-	    			<div class="item head">
-	    				<div class="num item-inner">号码</div>
-	    				<div class="times item-inner">出现次数</div>
-	    			</div>
-	    			<div class="item">
-	    				<div class="num item-inner">1</div>
-	    				<div class="times item-inner">15</div>
-	    			</div>
-	    			<div class="item">
-	    				<div class="num item-inner">2</div>
-	    				<div class="times item-inner">5</div>
-	    			</div>
-	    			<div class="item">
-	    				<div class="num item-inner">3</div>
-	    				<div class="times item-inner">4</div>
-	    			</div>
-	    			<div class="item">
-	    				<div class="num item-inner">4</div>
-	    				<div class="times item-inner">4</div>
-	    			</div>
-	    			<div class="item">
-	    				<div class="num item-inner">5</div>
-	    				<div class="times item-inner">15</div>
-	    			</div>
-	    			<div class="item">
-	    				<div class="num item-inner">6</div>
-	    				<div class="times item-inner">11</div>
-	    			</div>
-	    			<div class="item">
-	    				<div class="num item-inner">7</div>
-	    				<div class="times item-inner">7</div>
-	    			</div>
-	    			<div class="item">
-	    				<div class="num item-inner">8</div>
-	    				<div class="times item-inner">44</div>
-	    			</div>
-	    			<div class="item">
-	    				<div class="num item-inner">9</div>
-	    				<div class="times item-inner">1</div>
-	    			</div>
-	    			<div class="item">
-	    				<div class="num item-inner">10</div>
-	    				<div class="times item-inner">4</div>
-	    			</div>
-	    			<div class="item">
-	    				<div class="num item-inner">11</div>
-	    				<div class="times item-inner">1</div>
-	    			</div>
-	    		</div>
-	    	</div>
-	    </div>
-	</div>
-	<script src="../js/mui.picker.js"></script>
-	<script>
-		mui.plusReady(function(){
-			mui('.mui-scroll-wrapper').scroll();
-			var date = new Date();
-			var year = date.getFullYear();
-			var timevalue = date.getFullYear()+"-"+formatMonth(date.getMonth())+"-"+date.getDate();
-			var options = {"type":"date","beginYear":2010,"endYear":year,"value":timevalue}
-			var picker = new mui.DtPicker(options);
-			function formatMonth(m){
-				m = m-0;
-				m++;
-				if(m<10){
-					return "0"+m;
-				} 
-				return ""+m;
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="../js/mui.min.js"></script>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/mui.picker.min.css" />
+		<script type="text/javascript" charset="UTF-8">
+			mui.init();
+		</script>
+		<style>
+			body {
+				background-color: #fff;
+				font-family: "Microsoft YaHei";
+				font-size: 14px;
 			}
-		})
-	</script>
-</body>
+			
+			.header {
+				background-color: #6687F9;
+			}
+			
+			.header a,
+			.header h1 {
+				color: #fff;
+			}
+			
+			.mui-scroll-wrapper {
+				top: 44px;
+			}
+			
+			.item {
+				font-size: 0px;
+				border-bottom: 1px solid #d1d1d1;
+			}
+			
+			.item-inner {
+				font-size: 14px;
+				display: inline-block;
+				width: 50%;
+				text-align: center;
+				padding: 8px 0;
+				background-color: #fff;
+				color: #000;
+			}
+			
+			.head .item-inner {
+				background-color: #DDDDDD;
+			}
+			
+			.tips-choose-time {
+				padding: 16px 0;
+				text-align: center;
+				position: relative;
+			}
+			
+			.choose-time {
+				padding: 4px 8px;
+				position: absolute;
+				background-color: red;
+				border-radius: 2px;
+				top: 50%;
+				right: 10px;
+				margin-top: -12px;
+				color: #fff;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav header">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">统计</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<div class="content">
+						<div class="tips-choose-time">
+							<span>2016.6.12</span>号码统计
+							<span class="choose-time">选择日期</span>
+						</div>
+						<div class="item head">
+							<div class="num item-inner">号码</div>
+							<div class="times item-inner">出现次数</div>
+						</div>
+						<div class="item">
+							<div class="num item-inner">1</div>
+							<div class="times item-inner">15</div>
+						</div>
+						<div class="item">
+							<div class="num item-inner">2</div>
+							<div class="times item-inner">5</div>
+						</div>
+						<div class="item">
+							<div class="num item-inner">3</div>
+							<div class="times item-inner">4</div>
+						</div>
+						<div class="item">
+							<div class="num item-inner">4</div>
+							<div class="times item-inner">4</div>
+						</div>
+						<div class="item">
+							<div class="num item-inner">5</div>
+							<div class="times item-inner">15</div>
+						</div>
+						<div class="item">
+							<div class="num item-inner">6</div>
+							<div class="times item-inner">11</div>
+						</div>
+						<div class="item">
+							<div class="num item-inner">7</div>
+							<div class="times item-inner">7</div>
+						</div>
+						<div class="item">
+							<div class="num item-inner">8</div>
+							<div class="times item-inner">44</div>
+						</div>
+						<div class="item">
+							<div class="num item-inner">9</div>
+							<div class="times item-inner">1</div>
+						</div>
+						<div class="item">
+							<div class="num item-inner">10</div>
+							<div class="times item-inner">4</div>
+						</div>
+						<div class="item">
+							<div class="num item-inner">11</div>
+							<div class="times item-inner">1</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../js/mui.picker.min.js"></script>
+		<script>
+			mui.plusReady(function() {
+				mui('.mui-scroll-wrapper').scroll();
+				var date = new Date();
+				var year = date.getFullYear();
+				var timevalue = date.getFullYear() + "-" + formatT(date.getMonth(),true) + "-" + formatT(date.getDate());
+				var options = {
+					"type": "date", 
+					"beginYear": 2010,
+					"endYear": year,
+					"value": timevalue
+				}
+				mui('.tips-choose-time').on('tap', '.choose-time', function() {
+					var picker = new mui.DtPicker(options);
+					picker.show(function(rs) {
+						compareTime(rs)					
+						picker.dispose();
+					})
+				})
+				function compareTime(rs){
+					var nowYear = date.getFullYear();
+					var nowMonth = date.getMonth()+1;
+					var nowday = date.getDate();
+					var time = rs.value.split('-');
+					if(parseInt(nowYear)<time[0]){
+						mui.alert('所选年份无统计记录');
+						return false;
+					}
+					if(parseInt(nowMonth)<parseInt(reformatT(time[1],true))){
+						mui.alert('所选月份无统计记录');
+						return false;
+					}
+					if(parseInt(nowday)<parseInt(reformatT(time[2]))){
+						mui.alert('所选日期无统计记录');
+						return false;
+					}
+					return true;
+				}
+				function reformatT(m,ifm){
+					if(m[0]=='0'){
+						m = m.slice(1);
+					}
+					m = m-0;
+					if(ifm){
+						m--;
+						return ''+m;
+					}
+					return ''+m;
+				}
+				function formatT(m,ifm) {
+					m = m - 0;
+					if(ifm){
+						m++;
+					}
+					if (m < 10) {
+						return "0" + m;
+					}
+					return "" + m;
+				}
+			})
+		</script>
+	</body>
+
 </html>
