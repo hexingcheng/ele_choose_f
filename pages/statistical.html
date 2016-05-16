@@ -159,15 +159,15 @@
 					var nowday = date.getDate();
 					var time = rs.value.split('-');
 					if(parseInt(nowYear)<time[0]){
-						mui.alert('请选择正确的年份');
+						mui.alert('所选年份无统计记录');
 						return false;
 					}
 					if(parseInt(nowMonth)<parseInt(reformatT(time[1],true))){
-						mui.alert('请选择正确的月份');
+						mui.alert('所选月份无统计记录');
 						return false;
 					}
 					if(parseInt(nowday)<parseInt(reformatT(time[2]))){
-						mui.alert('请选择正确的日期');
+						mui.alert('所选日期无统计记录');
 						return false;
 					}
 					return true;
